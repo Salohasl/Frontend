@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import Intro from "./components/Intro.vue";
+
 </script>
 
 <template>
-  <Intro />
+  <router-view>
+
+  </router-view>
 </template>
 
 <style scoped>

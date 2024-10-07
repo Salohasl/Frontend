@@ -1,16 +1,28 @@
 <script setup lang="ts">
+import {useRoute, useRouter} from "vue-router";
+
+const router = useRouter();
+const route = useRoute();
+
+function goToHome() {
+  router.push('/')
+}
+
+function goToWork() {
+  router.push('/work')
+}
 
 </script>
 
 <template>
   <header>
     <nav>
-      <div class="logo">
+      <div class="logo" :class="{ active: route.path === '/' }" @click="goToHome">
         <span>LOGO</span>
       </div>
       <div class="header-link">
         <a href="#">Преимущества</a>
-        <a href="#">Как работаем</a>
+        <a :class="{ active: route.path === '/work' }" @click="goToWork">Как работаем</a>
       </div>
     </nav>
   </header>
@@ -23,7 +35,7 @@
     align-items: center;
     padding: 15px 0;
     position: fixed;
-    top: 50px;
+    top: 30px;
     width: 100%;
   }
 
@@ -34,6 +46,13 @@
     width: 150px;
     text-align: center;
     border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &.active {
+      color: white;
+      background: black;
+    }
   }
 
   nav {
@@ -47,8 +66,15 @@
   .header-link {
 
     a {
-      margin-left: 20px;
+      margin-left: 50px;
       text-decoration: none;
+      color: #1D1D1B;
+      cursor: pointer;
+      transition: 0.5s;
+
+      &.active {
+        color: #FF5900;
+      }
     }
   }
 </style>
