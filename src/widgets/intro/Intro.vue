@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {useStore} from "../../shared";
-import Header from "../header";
 import IntroComponent from "./ui";
 
 const store = useStore();
@@ -13,15 +12,14 @@ const clickHandlerAlert = () => {
 </script>
 
 <template>
-  <div class="intro">
-    <Header />
+  <section class="intro">
     <div class="intro-wrapper">
       <h1>Монетизируйте клиентскую <br> базу, не снижая NPS</h1>
       <p>Найдите идеальный баланс выручки и удовлетворённости пользователей с платформой рекламной монетизации</p>
       <button @click="clickHandlerAlert">Заказать звонок</button>
       <IntroComponent />
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss">

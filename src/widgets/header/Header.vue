@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import {useRoute, useRouter} from "vue-router";
+import {onMounted, ref} from "vue";
 
 const router = useRouter();
 const route = useRoute();
+const isScroll = ref(false);
 
 function goToHome() {
   router.push('/')
@@ -12,10 +14,18 @@ function goToWork() {
   router.push('/work')
 }
 
+function scrollView() {
+  isScroll.value = window.scrollY > 100;
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', scrollView);
+});
+
 </script>
 
 <template>
-  <header>
+  <header :class="{ scroll: isScroll }">
     <nav>
       <div class="logo" :class="{ active: route.path === '/' }" @click="goToHome">
         <span>LOGO</span>
@@ -37,6 +47,12 @@ function goToWork() {
     position: fixed;
     top: 30px;
     width: 100%;
+    transition: 0.2s;
+
+    &.scroll {
+      top: 0px;
+      background: #F2F6F6;
+    }
   }
 
   .logo {
