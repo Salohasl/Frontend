@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Header from "./Header.vue";
-import IntroComponent from "./intro/IntroComponent.vue";
-import {useStore} from "../store";
+import {useStore} from "../../shared";
+import Header from "../header";
+import IntroComponent from "./ui";
 
 const store = useStore();
 

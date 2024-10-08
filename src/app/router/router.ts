@@ -1,5 +1,5 @@
-import Work from "../view/Work.vue";
-import Home from "../view/Home.vue";
+import Work from "../../pages/Work.vue";
+import Home from "../../pages/Home.vue";
 
 export const routes = [
     {

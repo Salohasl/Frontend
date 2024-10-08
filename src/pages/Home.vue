@@ -1,11 +1,9 @@
 <script setup lang="ts">
-
-import Header from "../components/Header.vue";
+import Intro from "../widgets/intro";
 </script>
 
 <template>
-<Header />
-  <h1>РАБОТАЕМ</h1>
+  <Intro />
 </template>
 
 <style scoped lang="scss">
